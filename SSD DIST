@@ -1,0 +1,26 @@
+```r
+#1 4 buah kurva
+data(iris)
+head(iris)
+summary(iris)
+#kurva distribusi normal untuk Sepal Length
+curve(dnorm(x, mean=mean(iris$Sepal.Length), sd=sd(iris$Sepal.Length)), 
+      xlim=c(-1.5,9), ylim=c(0,1), col="pink", lwd=3, ylab="Density", 
+      xlab="Value", main="Kurva Distribusi Normal Data Iris")
+
+#kurva distribusi normal untuk Sepal Width
+curve(dnorm(x, mean=mean(iris$Sepal.Width), sd=sd(iris$Sepal.Width)), 
+      xlim=c(-1.5,9), ylim=c(0,1), col="purple", lwd=3, add=TRUE)
+
+#kurva distribusi normal untuk Petal Length
+curve(dnorm(x, mean=mean(iris$Petal.Length), sd=sd(iris$Petal.Length)), 
+      xlim=c(-1.5,9), ylim=c(0,1), col="blue", lwd=3, add=TRUE)
+
+# Tambahkan kurva distribusi normal untuk Petal Width
+curve(dnorm(x, mean=mean(iris$Petal.Width), sd=sd(iris$Petal.Width)), 
+      xlim=c(-1.5,9), ylim=c(0,1), col="green", lwd=3, add=TRUE)
+
+# Tambahkan legend untuk keterangan tiap plot
+legend("topright", legend=c("Sepal Length", "Sepal Width", "Petal Length", 
+                            "Petal Width"), col=c("pink", "purple", "blue", "green"), lwd=3)
+```
